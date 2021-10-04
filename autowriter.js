@@ -7,21 +7,27 @@ const message = ["Hello my name is Chris Djya I am Cybe Analyst ",
                  "Hello i love football and basket ball", 
                  "How is  everything  manage to be set", 
                  "I am javascript analyst"];
-
-boutton1.addEventListener("click", showMessage)
-
-setInterval(function() {
-   console.log("hello"); 
-},1500);
+var i = 0;
+var speed = 50;
 
 
+boutton1.addEventListener("click", typeWriter);
 
-function showMessage () {
+
+
+
+function typeWriter() {
 
     let indice = Math.floor((Math.random() * 7 ));
     let myMessage = message[indice];
 
- 
+    if(i < myMessage[indice].length) {
+
+      output.innerHTML += myMessage[indice].charAt(i);
+      i++;
+      setTimeout(typeWriter,speed)
+
+    }
  
 }
 
